@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 
 import {
@@ -12,7 +12,15 @@ import {
   getRecommendedNextAction,
 } from "@/lib/planning-guide/decisionEngine";
 
-export default function PrintFuneralPlan() {
+export default function PrintPage() {
+  return (
+    <Suspense fallback={<div className="p-10">Loading funeral plan...</div>}>
+      <PrintFuneralPlan />
+    </Suspense>
+  );
+}
+
+function PrintFuneralPlan() {
   const searchParams = useSearchParams();
 
   const inputs = {
