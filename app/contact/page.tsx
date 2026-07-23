@@ -1,62 +1,56 @@
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
+import type { Metadata } from "next";
+import CallbackForm from "./CallbackForm";
+
+export const metadata: Metadata = {
+  title: "Request a Callback | Funeral Insights South Africa",
+  description:
+    "Request assistance from a participating funeral provider in South Africa. Complete the form and a provider can contact you.",
+};
 
 export default function ContactPage() {
   return (
-    <>
-      <Navbar />
-
-      <main className="min-h-screen bg-[#F7F7F4] text-[#1E3D34]">
-        <section className="mx-auto max-w-4xl px-6 py-20 text-center">
-          <div className="flex items-center justify-center gap-8">
-            <div className="h-[2px] w-24 bg-[#C8A46A]/60" />
-
-            <span className="whitespace-nowrap text-sm font-semibold uppercase tracking-[0.45em] text-[#C8A46A]">
-              CONTACT
-            </span>
-
-            <div className="h-[2px] w-24 bg-[#C8A46A]/60" />
-          </div>
-
-          <h1 className="mt-8 text-5xl font-bold leading-tight">
-            Get in touch with Funeral Insights.
-          </h1>
-
-          <p className="mx-auto mt-6 max-w-3xl text-xl leading-9 text-[#4B5B55]">
-            Have a question, suggestion or provider enquiry? We&apos;d like to
-            hear from you.
-          </p>
-        </section>
-
-        <section className="mx-auto max-w-3xl px-6 pb-20">
-          <div className="rounded-3xl bg-white p-8 shadow-sm">
-            <h2 className="text-3xl font-bold">Contact us</h2>
-
-            <p className="mt-5 leading-8 text-[#4B5B55]">
-              For now, please contact us directly by email. As Funeral Insights
-              grows, we&apos;ll add a dedicated contact form and provider
-              enquiry process.
+    <main className="bg-gray-50">
+      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <div className="mx-auto max-w-3xl">
+          <div className="mb-10 text-center">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-emerald-800">
+              Funeral assistance
             </p>
 
-            <div className="mt-8 rounded-2xl bg-[#E8EFE9] p-6">
-              <p className="text-sm font-semibold uppercase tracking-widest text-[#C8A46A]">
-                Email
-              </p>
+            <h1 className="text-3xl font-bold tracking-tight text-gray-950 sm:text-4xl">
+              Need help arranging a funeral?
+            </h1>
 
-              <p className="mt-3 text-2xl font-bold">
-                hello@funeralinsights.co.za
+            <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-gray-700">
+              We understand that this may be an overwhelming and
+              difficult time. Complete the form below and we can share
+              your request with a participating funeral provider in
+              your province.
+            </p>
+          </div>
+
+          <CallbackForm />
+
+          <div className="mt-10 rounded-2xl bg-emerald-950 p-6 text-white sm:p-8">
+            <h2 className="text-xl font-semibold">Our promise</h2>
+
+            <div className="mt-5 space-y-3 text-sm leading-6 text-emerald-50 sm:text-base">
+              <p>✓ The service is free for families seeking help.</p>
+              <p>
+                ✓ There is no obligation to use a provider who contacts
+                you.
+              </p>
+              <p>
+                ✓ Your enquiry is only shared for the purpose of
+                helping with your funeral arrangements.
+              </p>
+              <p>
+                ✓ Your information is not displayed publicly.
               </p>
             </div>
-
-            <p className="mt-6 text-sm leading-7 text-[#4B5B55]">
-              Please do not send sensitive personal, medical or financial
-              information by email unless requested.
-            </p>
           </div>
-        </section>
-      </main>
-
-      <Footer />
-    </>
+        </div>
+      </section>
+    </main>
   );
 }
